@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "id": "change",
+  "id": "autofish",
   "version": "${version}",
-  "name": "CHANGE",
+  "name": "AutoFish",
   "description": "",
-  "authors": [],
+  "authors": ["Neapovil"],
   "contact": {},
   "license": "Unlicense",
-  "icon": "assets/change/icon.png",
+  "icon": "assets/autofish/icon.png",
   "environment": "client",
   "entrypoints": {
-    "client": ["com.github.neapovil.change.Change"]
+    "client": ["com.github.neapovil.autofish.AutoFish"]
   },
-  "mixins": ["CHANGE.mixins.json"],
+  "mixins": ["autofish.mixins.json"],
   "depends": {
     "fabricloader": "*",
     "fabric-api": "*",
