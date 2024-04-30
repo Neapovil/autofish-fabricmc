@@ -9,16 +9,16 @@ import net.minecraft.entity.player.PlayerEntity;
 public final class FishingBobberEntityEvents
 {
     public static final Event<Tick> TICK = EventFactory.createArrayBacked(Tick.class,
-            (listeners) -> (playerEntity, hookCountdown) -> {
+            (listeners) -> (playerEntity, caughtFish) -> {
                 for (Tick listener : listeners)
                 {
-                    listener.onTick(playerEntity, hookCountdown);
+                    listener.onTick(playerEntity, caughtFish);
                 }
             });
 
     @FunctionalInterface
     public interface Tick
     {
-        void onTick(@Nullable PlayerEntity playerEntity, int hookCountdown);
+        void onTick(@Nullable PlayerEntity playerEntity, boolean caughtFish);
     }
 }

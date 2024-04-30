@@ -15,12 +15,12 @@ import net.minecraft.entity.projectile.FishingBobberEntity;
 public class FishingBobberEntityMixin
 {
     @Shadow
-    private int hookCountdown;
+    private boolean caughtFish;
 
-    @Inject(method = "tick", at = @At("HEAD"))
+    @Inject(method = "tick", at = @At("TAIL"))
     public void tick(CallbackInfo ci)
     {
-        FishingBobberEntityEvents.TICK.invoker().onTick(this.getPlayerOwner(), this.hookCountdown);
+        FishingBobberEntityEvents.TICK.invoker().onTick(this.getPlayerOwner(), this.caughtFish);
     }
 
     @Shadow

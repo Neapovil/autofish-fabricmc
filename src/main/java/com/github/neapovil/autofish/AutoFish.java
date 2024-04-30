@@ -8,7 +8,6 @@ import com.github.neapovil.autofish.mixin.MinecraftClientAccessor;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.network.ServerPlayerEntity;
 
 public final class AutoFish implements ClientModInitializer
 {
@@ -20,14 +19,9 @@ public final class AutoFish implements ClientModInitializer
         FishingBobberEntityEvents.TICK.register(this::onTick);
     }
 
-    private void onTick(PlayerEntity playerEntity, int hookCountdown)
+    private void onTick(PlayerEntity playerEntity, boolean caughtFish)
     {
-        if (!(playerEntity instanceof ServerPlayerEntity))
-        {
-            return;
-        }
-
-        if (hookCountdown > 0)
+        if (caughtFish)
         {
             final MinecraftClient client = MinecraftClient.getInstance();
             ((MinecraftClientAccessor) client).invokeDoItemUse();
