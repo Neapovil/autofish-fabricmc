@@ -4,15 +4,21 @@
   "version": "${version}",
   "name": "AutoFish",
   "description": "",
-  "authors": ["Neapovil"],
+  "authors": [
+    "Neapovil"
+  ],
   "contact": {},
   "license": "Unlicense",
   "icon": "assets/autofish/icon.png",
   "environment": "client",
   "entrypoints": {
-    "client": ["com.github.neapovil.autofish.AutoFish"]
+    "client": [
+      "com.github.neapovil.autofish.AutoFish"
+    ]
   },
-  "mixins": ["autofish.mixins.json"],
+  "mixins": [
+    "autofish.mixins.json"
+  ],
   "depends": {
     "fabricloader": "*",
     "fabric-api": "*",
