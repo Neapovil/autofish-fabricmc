@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(FishingBobberEntity.class)
-public class FishingBobberEntityMixin
+public abstract class FishingBobberEntityMixin
 {
     @Shadow
     private boolean caughtFish;
@@ -22,8 +22,5 @@ public class FishingBobberEntityMixin
     }
 
     @Shadow
-    public PlayerEntity getPlayerOwner()
-    {
-        return null;
-    }
+    public abstract PlayerEntity getPlayerOwner();
 }

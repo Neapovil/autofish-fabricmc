@@ -8,5 +8,5 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 public interface MinecraftClientAccessor
 {
     @Invoker("doItemUse")
-    public void invokeDoItemUse();
+    void invokeDoItemUse();
 }
